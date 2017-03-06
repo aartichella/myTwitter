@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html ng-app="twitter">
+  <head>
+    <title>Profile</title>
+    <meta charset="UTF-8">
+	<%- include shared/commonfiles.ejs %>
+  </head>
+  <body  ng-controller="twitterfeed">
+<%- include shared/header.ejs %>
+<div class="tweetfeed_parent">
+<div class="row" >
+	
+  <div class="col-md-3">
+    <div class="thumbnail">
+      <img src="http://lorempixel.com/400/200/people/" alt="100%x200" style="height: 200px; width: 100%; display: block;">
+      <div class="caption" ng-controller="followingCtrl">
+        <h3>{{username}}</h3>
+        <p>Profile</p>
+        <p>
+        <a href="/home">Tweets</a>
+        <a href="/followers">Follower</a>
+        <a href="/following">Following</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- feed content -->
+  <div class="col-md-6" ng-hide="searchform.searcht.$dirty && searchfeed.length!=0">
+  
+ <div class="tweetbox">
+ <form class="tweet_form" ng-submit="sendtweet()">
+  <input type="inputarea" id="tweetspace" ng-model="user_tweet" placeholder="    whats happenning?"></input>
+  <div class="tweet_buttons">
+  
+<button type="submit" class="submit_tweet"> Tweet</button>
+</div>
+  </form>
+</div>
+
+  <div ng-repeat="tweet in tweetList.slice().reverse()" class="tweet_area"  >
+  	<div class="image"><img src="http://lorempixel.com/200/70/people/"/></div>
+  	<div class="tweet_content">
+  		<div class="title" style="display: inline-flex;">
+  		  {{tweet.tweeter_handle}}
+  		  <div class="retweet_from" ng-show="tweet.tweet_from" style="padding-left:5px;color:burlywood">
+  		  	retweeted from {{tweet.tweet_from}}
+  		  </div>
+    	</div>
+    	<div class="tweettext">
+      		{{tweet.tweettext}}
+    	</div>
+  		 <div class="buttons tweet_time">
+  		 	<button class="inner_retweet" data-text="{{tweet.tweettext}}"data-owner="{{tweet.tweeter_handle}}" ng-click = "retweet($event)">
+  		 		<span class="glyphicon glyphicon-refresh" data-text="{{tweet.tweettext}}"data-owner="{{tweet.tweeter_handle}}" aria-hidden="true"></span>
+  			</button>
+     		<div>{{tweet.timestamp |date:'medium'}}</div>
+   		 </div>
+  		
+  	</div>
+  </div>
+
+  
+  </div>
+  
+  <!--search content -->
+  <div class="col-md-6" ng-show="searchform.searcht.$dirty && searchfeed.length>0">
+  
+	<div ng-repeat="searchtweet in searchfeed | filter:searchtext" class="tweet_area">
+  		<div class="image"><img src="http://lorempixel.com/200/70/people/"/></div>
+  		<div class="tweet_content">
+  			<div class="title">
+  		  		{{searchtweet.tweeter_handle}}
+    		</div>
+    		<div class="tweettext">
+      			{{searchtweet.tweettext}}
+    		</div>
+  			 <div class="buttons tweet_time">
+  			 	
+     			{{searchtweet.timestamp |date:'medium'}}
+   		 	</div>
+	  	</div>
+  </div>	
+  </div>
+  
+  
+	<div class="col-md-3 ">
+    <div class="thumbnail">
+    	<div class="caption">
+    		<h3> Who to follow </h3>
+    	</div>
+    
+      <div class="follow_user" ng-repeat="item in whotofollow">
+      
+      	<div class="caption flex_follow">
+        	<h3>{{item.tweeter_handle}}</h3>
+        	<button class="btn btn-lg" data-followthis="{{item.tweeter_handle}}" ng-click="follow_handle(item,$event)">{{buttonText}}</button>
+      	</div>
+      </div>
+      <div ng-show="whotofollow.length==0"><span class="nofollow" >No more people to follow</span></div>
+    </div>
+  </div>
+</div>
+</div>
+<script src="../../controller/twitter_feedCtrl.js"></script>
+<script src="../../controller/followerCtrl.js"></script>
+</body>
+</html>

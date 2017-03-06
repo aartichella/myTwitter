@@ -1,0 +1,8 @@
+exports.register = function(req, res){
+	req.session.fname=req.body.fname;
+	req.session.email=req.body.email;
+	req.session.pwd=req.body.pwd;
+	
+	res.render('profile');
+	
+};

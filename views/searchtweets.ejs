@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+
+<html ng-app="twitter">
+
+  <head>
+
+    <title>Profile</title>
+
+    <meta charset="UTF-8">
+
+<%- include shared/commonfiles.ejs %>
+
+  </head>
+
+  <body ng-controller = "twitterfeed">
+
+<%- include shared/header.ejs %>
+
+<div class="tweetfeed_parent">
+
+<div class="row">
+
+  <div class="col-md-3">
+
+    <div class="thumbnail">
+
+      <img src="http://www.freelargeimages.com/wp-content/uploads/2014/11/Happy_birthday.jpg" alt="100%x200" style="height: 200px; width: 100%; display: block;">
+
+      <div class="caption">
+
+        <h3>Thumbnail label</h3>
+
+        <p>Profile</p>
+
+        <p>
+
+        <a href="#">Tweets</a>
+
+        <a href="#">Follower</a>
+
+        <a href="#">Following</a>
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="col-md-6">
+
+
+<p>{{hi there}}</p>
+
+  <div ng-repeat="searchtweet in searchfeed | filter:searchtext" class="tweetfeed">
+
+  <div>{{searchtweet.tweettext}} </div>
+
+  <div> {{searchtweet.timestamp |date:'medium'}}</div>
+
+  </div>
+
+  </div>
+
+<div class="col-md-3 ">
+
+    <div class="thumbnail">
+
+      <img src="http://www.freelargeimages.com/wp-content/uploads/2014/11/Happy_birthday.jpg" alt="100%x200" style="height: 200px; width: 100%; display: block;">
+
+      <div class="caption">
+
+        <h3>Thumbnail label</h3>
+
+        <p>Profile</p>
+
+        <p>
+
+        <a href="#">Tweets</a>
+
+        <a href="#">Follower</a>
+
+        <a href="#">Following</a>
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+</div>
+
+<script src="../../controller/twitter_feedCtrl.js"></script>
+
+</body>
+
+</html>

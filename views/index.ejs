@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+  <%- include shared/commonfiles.ejs %>
+  
+  <title>Twitter Login</title>
+
+</head>
+
+<body ng-app="twitter">
+<div class="header">
+<div class="twitter_image">
+	<img src="images/TwitterLogo_white.png" >
+</div>
+  <div  class="user-entry">
+  <button onclick="location.href='/signup'">Signup</button>
+  <button type="button" data-toggle="modal" data-target="#myModal">Login</button>
+ </div>
+ <div class="displaycontent">
+  <h2>See what's happening right now.</h2>
+  <h3>Find community, conversation and inspiration about the things you love.</h3>
+</div>
+<div ng-controller="loginCtrl">
+<%- include shared/loginmodal.ejs %>
+</div>
+ </div> 
+  <!-- Static navbar -->
+        <nav class="navbar navbar-default">
+            <div class="container-fluid" style="margin: 0 auto;width: 50%;">
+                <div id="navbar" class="nav nav-tabs nav-justified">
+                    <ul class="nav nav-tabs">
+                        <li><span class="glyphicon glyphicon-search navbar_search" aria-hidden="true"></span></li>
+                        <li class="active"><a href="#">Featured</a></li>
+                        <li><a href="#">Sports</a></li>
+                        <li><a href="#">News</a></li>
+                        <li><a href="#">Music</a></li>
+                        <li><a href="#">Entertainment</a></li>
+                        <li><a href="#">Lifestyle</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Technology & Science</a></li>
+                                <li><a href="#">Arts & Culture</a></li>
+                                <li><a href="#">Government & Politics</a></li>
+                                <li><a href="#">Gaming</a></li>
+                                <li><a href="#">Non Profits/a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+            <!--/.container-fluid -->
+        </nav>
+        <!-- Main component for a primary marketing message or call to action -->
+  </div>
+<div class="" style="padding-left : 15px; padding-right:15px;">
+       
+<div class = "row"  ng-controller = "headlineActivity">
+   
+   <div class = "col-sm-6 col-md-3">
+      <a href = "" class = "thumbnail">
+         <div class="caption">
+                <h4>{{header1}}</h4>
+                <p>10 minutes ago</p>
+          </div>
+         <img src="http://lorempixel.com/400/280/sports/" alt = "Generic placeholder thumbnail">
+      </a>
+   </div>
+   
+     <div class = "col-sm-6 col-md-3">
+      <a href = "" class = "thumbnail">
+         <div class="caption">
+                <h4>{{header2}}</h4>
+                <p>10 minutes ago</p>
+          </div>
+         <img src="http://lorempixel.com/400/280/fashion/" alt = "Generic placeholder thumbnail">
+      </a>
+   </div>
+     <div class = "col-sm-6 col-md-3">
+      <a href = "" class = "thumbnail">
+         <div class="caption">
+                <h4>{{header3}}</h4>
+                <p>10 minutes ago</p>
+          </div>
+         <img src="http://lorempixel.com/400/280/nightlife/" alt = "Generic placeholder thumbnail">
+      </a>
+   </div>
+     <div class = "col-sm-6 col-md-3">
+      <a href = "" class = "thumbnail">
+         <div class="caption">
+                <h4>{{header4}}</h4>
+                <p>10 minutes ago</p>
+          </div>
+         <img src="http://lorempixel.com/400/280/people/" alt = "Generic placeholder thumbnail">
+      </a>
+   </div>
+   
+</div>
+</body>
+</html>

@@ -1,0 +1,163 @@
+body {
+  /*padding: 50px;*/
+  font: 14px Helvetica Neue,"Lucida Grande", "Helvetica", Arial, sans-serif;
+   font-weight : 300;
+   background-color:#f5f8fa;
+}
+.btn-custom{
+	color:white;
+	border-color:#58AEEA;
+	background-color : #58AEEA;
+	    width: 200px;
+   /* margin-left: 25%;*/
+}
+a {
+ /* color: #00B7FF;*/
+}
+.login{
+	margin-right : 20px;
+	color : white;
+	font-weight : 500;
+	margin-top: 10px;
+	text-decoration : underline;
+}
+.navbar.navbar-default{
+	padding : 0 20px;
+	}
+	
+.topbar{
+  width : 100%;
+  height : 50px;
+  background-image : linear-gradient(to right, #58AEEA,#35CE93);
+}
+
+.tweetfeed_parent{
+	padding : 0 25px;
+}
+
+.tweetbox{
+ border-radius:5px;
+  background : #A2C6D4;
+  
+}
+
+#tweetspace{
+ width : 75%;
+  flex-basis : 5rem;
+	border:none;
+   margin-left:5%;
+  margin-top :  2%; 
+  align-self:center;
+  margin-bottom : 2%;
+}
+.submit_tweet{
+ width : 80px;
+height : 40px;
+  align-self : flex-end;
+  margin-right : 5%;
+  border : 0;
+  margin-bottom : 2%;
+  background-color:beige;
+}
+.tweet_form{
+  display : flex;
+  flex-direction: column;
+}
+.glyphicon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.retweet{
+	 width : 80px;
+height : 40px;
+  align-self : flex-start;
+  margin-left : 5%;
+  border : 0;
+  margin-bottom : 2%;
+  background: transparent;
+}
+.tweet_buttons{
+	display:flex;
+	flex-direction : row-reverse;
+}
+.tweet_buttons,
+.flex_follow{
+	
+	justify-content : space-between;
+}
+.flex_follow,
+.tweet_area
+{
+	 display : flex;
+  flex-direction : row;
+}
+.tweet_area{
+	
+  background-color:#fff;
+  
+  height : 70px;
+  margin : 10px auto;
+}
+
+.tweet_content{
+  display:flex;
+  flex-direction : column;
+  justify-content : space-around;
+}
+ .inner_retweet{
+	background:transparent;
+	border : 0;
+}
+.image{
+  flex-basis : 25rem;
+}
+.tweet_time{
+	display : flex;
+	flex-direction : row;
+	justify-content : space-around;
+	color:#8899A6;
+}
+
+.tweetfeed_parent .caption{
+	    border-top: #C0C0C0;
+    border-width: thin;
+    border-style: solid;
+    border-bottom: transparent;
+    border-right: transparent;
+    border-left: transparent;
+}
+.twitter_image img
+{
+	width:45px;
+	    margin: 30px;
+    position: absolute;
+}
+.navbar_twitterImage{
+	width:45px;
+	margin-right:15px;
+	margin-top:5px;
+}
+.navbar_search {
+   margin-top: 10px;
+    /* width: 15px; */
+    /* height: 15px; */
+    font-size: 20px;
+    margin-right: 18px;
+    color: #3E678B;
+}
+.caption h4{
+	font-weight : 300;
+}
+.nofollow{
+	    color: #C1C0C0;
+    font-size: 17px;
+    font-weight: 100;
+    margin-left: 23%;
+}
